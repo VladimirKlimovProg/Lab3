@@ -24,7 +24,7 @@ namespace Lab3
                     sn = sn + ((2 * n + 1) / fact) * Math.Pow(x, 2 * n);
                 }
 
-                //значение суммы ряда для заданной точности eps (eps = 0.0001);
+                //значение суммы ряда для заданной точности eps (eps = 0.0001)
                 double eps = 0.0001;
                 double se = 1;
                 double fact2 = 1;
