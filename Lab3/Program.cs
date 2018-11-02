@@ -10,7 +10,10 @@ namespace Lab3
     {
         static void Main(string[] args)
         {
-            for (double x = 0.1; x <= 1; x += 0.1)
+            const int k = 10;
+            const double a = 0.1, b = 1;
+
+            for (double x = 0.1; x <= 1; x += (b-a)/k)
             {
                 //точное значение функции
                 double y = (1 + 2 * x * x) * Math.Exp(x * x);
@@ -25,7 +28,7 @@ namespace Lab3
                 }
 
                 //значение суммы ряда для заданной точности eps (eps = 0.0001)
-                double eps = 0.0001;
+                const double eps = 0.0001;
                 double se = 1;
                 double fact2 = 1;
                 int m = 1;
@@ -38,8 +41,8 @@ namespace Lab3
                     m++;
                 }
 
-                Console.WriteLine($"x = {String.Format("{0,3:0.0}",x)} Sn = {sn}" +
-                    $" Se = {String.Format("{0,16:0.00000000000000}", se)} y = {String.Format("{0,16:0.00000000000000}",y)} ");
+                Console.WriteLine($"x = {String.Format("{0:0.00}",x)} Sn = {String.Format("{0:0.00000000000000}", sn)}" +
+                    $" Se = {String.Format("{0:0.00000000000000}", se)} y = {String.Format("{0:0.00000000000000}",y)} ");
             }
 
             Console.ReadLine();
